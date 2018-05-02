@@ -22,6 +22,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Demographic change on total population", "Index", "DemographicChange", new { area = "" }, null)</li>
                 </ul>
             </div>
         </div>
@@ -30,12 +31,16 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Demographic change</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Angular/js")
+    @Scripts.Render("~/Chart/js")
+    @Scripts.Render("~/AngularChart/js")
+    @Scripts.Render("~/DemographicChangeAngular/js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

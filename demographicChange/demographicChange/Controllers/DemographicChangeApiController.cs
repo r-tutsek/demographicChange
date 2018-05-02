@@ -23,17 +23,9 @@ namespace demographicChange.Controllers
             this._demographicChangeService = demographicChangeService;
         }
 
-        [HttpGet]
-        public IHttpActionResult GetDemographicChangeData()
+        [HttpPost]
+        public IHttpActionResult GetDemographicChangeData(DemographicChangeRequest searchRequest)
         {
-            var searchRequest = new DemographicChangeRequest
-            {
-                CountryName = "Romania",
-                NamespaceName = "demographicChangeService",
-                ClassName = "DemographicChangeService",
-                MethodName = "GetChangeData"
-            };
-
             var assembly = Assembly.Load(searchRequest.NamespaceName);
             var type = assembly.GetType(searchRequest.NamespaceName + "." + searchRequest.ClassName);
             

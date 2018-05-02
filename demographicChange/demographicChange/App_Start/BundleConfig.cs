@@ -20,9 +20,22 @@ namespace demographicChange
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/Angular/js").Include(
+                    "~/Scripts/angular.min.js"));
+
+            bundles.Add(new ScriptBundle("~/Chart/js").Include(
+                    "~/Scripts/Chart.min.js"));
+
+            bundles.Add(new ScriptBundle("~/AngularChart/js").Include(
+                    "~/Scripts/angular-chart/angular-chart.min.js"));
+
+            bundles.Add(new ScriptBundle("~/DemographicChangeAngular/js").Include(
+                    "~/Scripts/DemographicChangeAngular.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/DemographicChange.css"));
         }
     }
 }
