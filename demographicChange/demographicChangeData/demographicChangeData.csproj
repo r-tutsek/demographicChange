@@ -48,8 +48,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\DemographicChangeContext.cs" />
+    <Compile Include="DAL\DemographicChangeByEthnicGroupsRepository.cs" />
     <Compile Include="DAL\DemographicChangeRepository.cs" />
+    <Compile Include="DAL\IDemographicChangeByEthnicGroupsRepository.cs" />
     <Compile Include="DAL\IDemographicChangeRepository.cs" />
+    <Compile Include="Migrations\201804271411086_InitialCreate.cs" />
+    <Compile Include="Migrations\201804271411086_InitialCreate.Designer.cs">
+      <DependentUpon>201804271411086_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805021235231_Initital.cs" />
+    <Compile Include="Migrations\201805021235231_Initital.Designer.cs">
+      <DependentUpon>201805021235231_Initital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805021243555_Second.cs" />
+    <Compile Include="Migrations\201805021243555_Second.Designer.cs">
+      <DependentUpon>201805021243555_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805021358088_Third.cs" />
+    <Compile Include="Migrations\201805021358088_Third.Designer.cs">
+      <DependentUpon>201805021358088_Third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +80,20 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804271411086_InitialCreate.resx">
+      <DependentUpon>201804271411086_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805021235231_Initital.resx">
+      <DependentUpon>201805021235231_Initital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805021243555_Second.resx">
+      <DependentUpon>201805021243555_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805021358088_Third.resx">
+      <DependentUpon>201805021358088_Third.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

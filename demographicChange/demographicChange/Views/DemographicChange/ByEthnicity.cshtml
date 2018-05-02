@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Demographic change by Ethnicity";
+}
+
+<h2>Demographic change by Ethnicity</h2>
+<div ng-app="DemographicChangeApp">
+    <div ng-controller="DemographicChangeController">
+        <div class="demographicChangeCanvasHolder">
+            <div id="demographicChangeCanvasEmptyText" class="demographicChangeCanvasEmptyText">Chart data will apear here...</div>
+            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"></canvas>
+        </div>
+        <div class="demographicChangeGetDataBtnHolder"><button type="button" class="btn btn-primary demographicChangeGetDataBtn" ng-click="onGetDemographicChangeByEthnicityData()">Get and display demographic change by ethnicity data</button></div>
+    </div>
+</div>

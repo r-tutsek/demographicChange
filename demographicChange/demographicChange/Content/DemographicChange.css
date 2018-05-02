@@ -1,25 +1,29 @@
 ﻿.demographicChangeGetDataBtnHolder {
     width:100%;
-    overflow:hidden;
-    margin-bottom:15px;
+    overflow:hidden;    
 }
 .demographicChangeGetDataBtn {
     width:100%;
 }
 .demographicChangeCanvasHolder {
-    width:100%;
-    overflow:hidden;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #000;
+    margin-bottom: 5px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
 }
-.demographicChangeCanvasHolder {
-    position:relative;
-    border:1px solid #000;
-    padding:10px;
+.demographicChangeCanvasHolder canvas {
+    width:100%;
 }
 .demographicChangeCanvasEmptyText {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    font-size:18px;
-    font-weight:bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
 }

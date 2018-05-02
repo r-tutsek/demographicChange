@@ -204,6 +204,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DemographicChangeByEthnicityResponse.cs" />
     <Compile Include="Models\DemographicChangeRequest.cs" />
     <Compile Include="Models\DemographicChangeResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1044,8 +1045,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\DemographicChange\Index.cshtml" />
+    <Content Include="Views\DemographicChange\Total.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\DemographicChange\ByEthnicity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

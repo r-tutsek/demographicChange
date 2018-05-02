@@ -11,5 +11,6 @@ namespace DemographicChangeData.Context
     public class DemographicChangeContext : DbContext
     {
         public DbSet<DemographicChangeEntity> ChangeContext { get; set; }
+        public DbSet<DemographicChangeByEthnicGroupsEntity> ChangeByEthnicGroupsContext { get; set; }
     }
 }

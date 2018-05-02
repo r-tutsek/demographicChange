@@ -23,8 +23,9 @@ namespace demographicChange.Autofac
             builder.RegisterWebApiModelBinderProvider();
 
             builder.RegisterType<DemographicChangeRepository>().As<IDemographicChangeRepository>();
+            builder.RegisterType<DemographicChangeByEthnicGroupsRepository>().As<IDemographicChangeByEthnicGroupsRepository>();
             builder.RegisterType<DemographicChangeService>().As<IDemographicChangeService>();
-
+            
             var container = builder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }

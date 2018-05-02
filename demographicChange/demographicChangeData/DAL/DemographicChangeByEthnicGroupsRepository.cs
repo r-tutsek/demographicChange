@@ -1,33 +1,30 @@
-﻿using DemographicChangeData.Context;
-using demographicChangeEntity.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DemographicChangeData.Context;
+using demographicChangeEntity.Entity;
 
 namespace DemographicChangeData.DAL
 {
-    public class DemographicChangeRepository : IDemographicChangeRepository, IDisposable
+    public class DemographicChangeByEthnicGroupsRepository : IDemographicChangeByEthnicGroupsRepository, IDisposable
     {
         private DemographicChangeContext context;
         private bool disposed = false;
 
-        public DemographicChangeRepository()
-        {
+        public DemographicChangeByEthnicGroupsRepository() {
             this.context = new DemographicChangeContext();
         }
 
-        public void InsertData(DemographicChangeEntity demographicChange)
+        public List<DemographicChangeByEthnicGroupsEntity> GetDemographicChangeByEthnicGroupsData()
         {
-            Debug.WriteLine(demographicChange.Year);
-            this.context.ChangeContext.Add(demographicChange);
+            return this.context.ChangeByEthnicGroupsContext.ToList<DemographicChangeByEthnicGroupsEntity>();
         }
 
-        public List<DemographicChangeEntity> GetAllDemographicChangeData()
+        public void InsertData(DemographicChangeByEthnicGroupsEntity demographicChangeByEtnicGroups)
         {
-            return this.context.ChangeContext.ToList<DemographicChangeEntity>();
+            this.context.ChangeByEthnicGroupsContext.Add(demographicChangeByEtnicGroups);
         }
 
         public void Save()

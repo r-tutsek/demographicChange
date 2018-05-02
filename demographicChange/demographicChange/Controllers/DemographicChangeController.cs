@@ -9,7 +9,12 @@ namespace demographicChange.Controllers
     public class DemographicChangeController : Controller
     {
         // GET: DemographicChange
-        public ActionResult Index()
+        public ActionResult Total()
+        {
+            return View();
+        }
+
+        public ActionResult ByEthnicity()
         {
             return View();
         }

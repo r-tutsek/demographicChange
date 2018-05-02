@@ -9,7 +9,7 @@ namespace demographicChangeService
 {
     public interface IDemographicChangeService
     {
-        void AddMockData(List<DemographicChangeEntity> demographicChange);
-        List<DemographicChangeEntity> GetChangeData();
+        List<DemographicChangeEntity> GetTotalPopulation();
+        List<DemographicChangeByEthnicGroupsEntity> GetEthnicGroupsPopulation();
     }
 }
