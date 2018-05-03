@@ -19,7 +19,7 @@ namespace DemographicChangeData.DAL
 
         public List<DemographicChangeByEthnicGroupsEntity> GetDemographicChangeByEthnicGroupsData()
         {
-            return this.context.ChangeByEthnicGroupsContext.ToList<DemographicChangeByEthnicGroupsEntity>();
+            return this.context.ChangeByEthnicGroupsContext.OrderBy(x => x.Year).ToList<DemographicChangeByEthnicGroupsEntity>();
         }
 
         public void InsertData(DemographicChangeByEthnicGroupsEntity demographicChangeByEtnicGroups)

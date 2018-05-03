@@ -21,13 +21,12 @@ namespace DemographicChangeData.DAL
 
         public void InsertData(DemographicChangeEntity demographicChange)
         {
-            Debug.WriteLine(demographicChange.Year);
             this.context.ChangeContext.Add(demographicChange);
         }
 
         public List<DemographicChangeEntity> GetAllDemographicChangeData()
         {
-            return this.context.ChangeContext.ToList<DemographicChangeEntity>();
+            return this.context.ChangeContext.OrderBy(x => x.Year).ToList<DemographicChangeEntity>();
         }
 
         public void Save()

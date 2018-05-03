@@ -25,19 +25,16 @@ namespace demographicChange.Controllers
             this._demographicChangeService = demographicChangeService;
         }
 
-        [HttpPost]
-        public IHttpActionResult GetData(DemographicChangeRequest searchRequest)
+        [HttpGet]
+        public IHttpActionResult GetTotalPopulationData()
         {
-            var assembly = Assembly.Load(searchRequest.NamespaceName);
-            var type = assembly.GetType(searchRequest.NamespaceName + "." + searchRequest.ClassName);
-            
-            var constructor = type.GetConstructor(new Type[] { typeof(DemographicChangeRepository), typeof(DemographicChangeByEthnicGroupsRepository) });
-            var classObject = constructor.Invoke(new Object[] { this._demographicChangeRepository, this._demographicChangeByEthnicGroupsRepository });
+            return Ok(this._demographicChangeService.GetTotalPopulation());
+        }
 
-            var method = type.GetMethod(searchRequest.MethodName);
-            var demographicChangeData = method.Invoke(classObject, null);
-           
-            return Ok(demographicChangeData);
+        [HttpGet]
+        public IHttpActionResult GetEthnicGroupsPopulationData()
+        {
+            return Ok(this._demographicChangeService.GetEthnicGroupsPopulation());
         }
     }
 }
