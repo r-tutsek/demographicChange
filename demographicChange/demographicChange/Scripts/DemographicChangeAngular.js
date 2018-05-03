@@ -24,10 +24,10 @@ demographicChangeModule.controller("DemographicChangeController", function ($sco
                     labelArr.push(obj.Year);
                     dataArr.push(obj.PopulationCount);
                 });
-                $scope.labels = labelArr.reverse();
-                $scope.data = dataArr.reverse();
+                $scope.linearChartLabels = labelArr.reverse();
+                $scope.linearChartData = dataArr.reverse();
             } else if (methodName == "GetEthnicGroupsPopulation") {
-                var tmpArr = [];
+                var tmpArr = {};
                 angular.forEach(data, function (obj, key) {
                     var tmp = {};
                     if (typeof tmpArr[obj.Year] == "undefined") {
@@ -37,7 +37,26 @@ demographicChangeModule.controller("DemographicChangeController", function ($sco
                     tmp["Ethnicity"] = obj.Ethnicity;
                     tmpArr[obj.Year].push(tmp);
                 });
-                //continue from here...
+                var index = 0;
+                var ethnicRow1 = [];
+                var ethnicRow2 = [];
+                var ethnicRow3 = [];
+                if (Object.keys(tmpArr).length > 0) {
+                    $scope.barChartOptions = {legend: {display:true}};
+                    angular.forEach(tmpArr, function (obj, key) {
+                        labelArr.push(key);
+                        ethnicRow1.push(obj[0].PopulationCount);
+                        ethnicRow2.push(obj[1].PopulationCount);
+                        ethnicRow3.push(obj[2].PopulationCount);
+                        if (index == 0) {
+                            $scope.barChartSeries = [obj[0].Ethnicity, obj[1].Ethnicity, obj[2].Ethnicity];
+                        }
+                        ++index;
+                    });
+                    dataArr = [ethnicRow1, ethnicRow2, ethnicRow3];
+                }
+                $scope.barChartLabels = labelArr;
+                $scope.barChartData = dataArr;
             }
             angular.element("#demographicChangeCanvasEmptyText").hide();
         }

@@ -8,7 +8,7 @@
     <div ng-controller="DemographicChangeController">
         <div class="demographicChangeCanvasHolder">
             <div id="demographicChangeCanvasEmptyText" class="demographicChangeCanvasEmptyText">Chart data will apear here...</div>
-            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"></canvas>
+            <canvas id="base" class="chart-bar" chart-data="barChartData" chart-labels="barChartLabels" chart-legend="true" chart-options="barChartOptions" chart-series="barChartSeries"></canvas>
         </div>
         <div class="demographicChangeGetDataBtnHolder"><button type="button" class="btn btn-primary demographicChangeGetDataBtn" ng-click="onGetDemographicChangeByEthnicityData()">Get and display demographic change by ethnicity data</button></div>
     </div>
